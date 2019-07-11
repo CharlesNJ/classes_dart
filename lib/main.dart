@@ -23,8 +23,9 @@ class Microphone{
     print('$name with color: $color volume is up!');
   }
 
-  //Constructor
-  //this. = this object/class
+//  Constructor (general)
+//  this. = this object/class
+//  Stay away from this if you use Dart!
   Microphone(String name, String color, int model){
     this.name=name;
     this.color=color;
@@ -32,13 +33,35 @@ class Microphone{
 
   }
 
+//Getter and Setter
+  String get getName => name;
+  set setName(String value) =>name=value;
+
 }
 
 class Wire{
   int length;
   String color;
   String model;
+
 }
+
+
+class Stand{
+  int length;
+  String color;
+  String model;
+
+//Syntactic sugar constructor
+  Stand(this.length,this.color,this.model);
+
+//  Using Named Constructor
+  Stand.initiall(){
+    length=12;
+    color='Silver-Black';
+  }
+}
+
 
 main(){
 //  var mic = new Microphone();
@@ -48,11 +71,19 @@ main(){
 
 //CREATING ANOTHER INSTANCE WITH THE CONSTRUCTOR
   var mic_1 = new Microphone('XLR 125', "Black", 2019);
+
+//Without the constructor
   var wir = new Wire();
   wir.color='yellow';
   wir.length=10;
   wir.model='xlr';
 
+//Passing attributes with the sugar constructor
+  var stan=new Stand(7,'Black','Mic flex');
+
+//With the named constructor
+  var stan_2=new Stand.initiall();
+  print(stan_2.model);
 
 //  print(mic);
 //  print(mic.name);
@@ -66,6 +97,16 @@ main(){
 //  print(mic.isOn());
 //  print(mic.modelNum());
   print(mic_1);
+  print(stan);
 
+//Using Setter Getter
+//  You don't have to use these if you use only static instances.. you really
+//  don't have to because these are implicit in the variables
+mic_1.setName="New Name";
+print(mic_1.getName);
 }
+
+//------------------------------------------------------------------------//
+//  Inheritance
+
 
