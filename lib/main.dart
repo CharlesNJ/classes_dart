@@ -58,8 +58,8 @@ main(){
 //  print(mic.name);
 //  print(mic.color);//. gives access to the operator
 //
-//  print('${wir.model} this is a check');
-//  print(wir.color);
+  print('${wir.model} this is a check');
+  print(wir.color);
 //  mic.turnOff(); //accessing the method
 //  mic.setVolume();
 //  mic.isOn(); //won't print anything because it just returns the value
