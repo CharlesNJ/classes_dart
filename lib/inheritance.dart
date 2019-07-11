@@ -33,7 +33,7 @@ class Chelsea extends Person{
   String nationality='Indian';
 
   result(){
-    print('BIO of $name  $lastName: \nAn $nationality and \n can draw: $canDraw.' );
+    print('\nBIO of $name  $lastName: \nAn $nationality and \n can draw: $canDraw.' );
   }
 }
 
@@ -49,5 +49,41 @@ main(){
   chelsea.canDraw=true;
   chelsea.name='Chelsea';
   print(chelsea.result());
+  chelsea.sayHello();
+
+//Calling the parent with a constructor
+  var location=new LocationEL(23.11, -22.99, 72);
+  print('location=(${location.lat}, ${location.lag}) and the temparature is ${location.temp} ');
+  
+//Because you use the toString method you don't have to give the parameters as above
+  print(location); //you don't have to say (location.toString) when you override
+                  //  toString it knows to take from there
+
+}
+
+//Inheritance from a class that has a constructor
+class Location{
+  num lat, lag;
+
+  Location(this.lat,this.lag);
+  Location.create(this.lat,this.lag); //using name constructor
+}
+
+class LocationEL extends Location{
+  num temp;
+
+//Inserting by clicking on the above LocationEL when it shows red and
+//and create to call that from the parent class
+  LocationEL(num lat, num lag,this.temp) : super(lat, lag);
+
+//for name constructor use the below line observe _super.create_
+//  LocationEL(num lat, num lag,this.temp) : super.create(lat, lag);
+  @override
+  String toString() {
+    String result = 'This is how you can use inherentiance using toString:\n'
+        'The coordinates are ($lag, $lat) and the temp is $temp';
+    return result;
+  }
+
 }
 
