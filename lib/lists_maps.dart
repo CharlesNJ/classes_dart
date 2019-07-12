@@ -7,7 +7,7 @@ class Person{
 main(){
   var list=[0,01,2,3,4,5,6];
 
-//creating lists with specific properties. Here Str and Int
+//creating lists with specific types. Here Str and Int
   var onlyStrings=new List<String>();
   var onlyInt=new List<int>();
   onlyStrings.add('Char');
@@ -16,7 +16,7 @@ main(){
 
   print(onlyInt);//just checking
 
-//Initializing classes
+//Initializing our own types created using classes
   var jenn=new Person('Jenn');
   var benn=new Person('Benn');
   var kenn=new Person('Kenn');
