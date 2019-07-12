@@ -6,14 +6,21 @@ main(){
 
   var jenn=new Person('Jenny', 'INdian');
   print(jenn);
+  var tvshow =new TvShow();
+  print(tvshow);
 }
 
-//When do you make a class abstract? When they are so gereric
+//When do you make a class abstract? When they are so generic
 abstract class Animal{
   void breathe();//abstract method
   void noise(){
     print('Making animal noises!');
   }
+}
+
+abstract class IsFunny {
+  void makePeopleLaugh(); //abstract method
+
 }
 
 class Person implements Animal{
@@ -35,11 +42,6 @@ class Person implements Animal{
   String toString() => '$name is $nationality';
 }
 
-abstract class IsFunny {
-  void makePeopleLaugh(); //abstract method
-
-}
-
 //creating a comedian.. that has properties of a Person and a IsFunny
 class Comedian extends Person implements IsFunny{
   Comedian(String name, String nationality) : super(name, nationality);
@@ -51,11 +53,17 @@ class Comedian extends Person implements IsFunny{
   }
 }
 
-class tvShow implements IsFunny{
+
+class TvShow implements IsFunny{
   String name;
 
   @override
   void makePeopleLaugh() {
     print('TV can make people laugh!');
+  }
+  @override
+  String toString() {
+    var p='This is toString from TvShow';
+    return p;
   }
 }
