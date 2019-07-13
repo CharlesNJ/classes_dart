@@ -2,6 +2,7 @@ class Person{
   String name, lastName, nationality;
   int age;
 
+
   void showName(){
     print(this.name);
   }
@@ -9,7 +10,7 @@ class Person{
   void sayHello(){
     print('Hello!');
   }
-//  Person(this.name,this.lastName,this.nationality,this.age);
+  //Person(this.name,this.lastName,this.nationality,this.age);
 }
 
 //Inheriting; keyword is extends
@@ -17,6 +18,8 @@ class Charles extends Person{
 
 //This can also have some additional properties
   String profession;
+
+  //Charles(String name, String lastName, String nationality, int age) : super(name, lastName, nationality, age);
 
 //overriding the existing method from the parent
   @override
@@ -31,6 +34,8 @@ class Chelsea extends Person{
   bool canDraw;
   String lastName='Ruth';
   String nationality='Indian';
+
+  //Chelsea(String name, String lastName, String nationality, int age) : super(name, lastName, nationality, age);
 
   result(){
     print('\nBIO of $name  $lastName: \nAn $nationality and \n can draw: $canDraw.' );
@@ -87,3 +92,7 @@ class LocationEL extends Location{
 
 }
 
+int calculate(int a, int b){
+
+  return a+b;
+}
